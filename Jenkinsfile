@@ -27,7 +27,7 @@ environment {
                } 
            }
 
-       stage("Build") {
+/*       stage("Build") {
             steps {
               mavenBuild();
                }
@@ -63,5 +63,5 @@ environment {
         always {
             sendNotifications("currentBuild.result")
         }
-    }
+*/    }
 }
