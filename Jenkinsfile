@@ -17,7 +17,7 @@ environment {
         //  Define all variables
         MVN_RELEASE_VERSION = "0.0.1"
         MVN_DEV_VERSION = "0.0.2-SNAPSHOT"
-        gitbranch="env.BRANCH_NAME"
+        gitbranch="developemet"
        }  
     options {
         // Only keep the 10 most recent builds
