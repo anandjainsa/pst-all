@@ -50,7 +50,7 @@ environment {
         stage("Release Tag") {
 
             steps {
-                  withCredentials([usernamePassword(credentialsId: 'facbaf06-91fe-4f32-bb2f-8999e62b01fe', usernameVariable: 'USERNAME', passwordVariable: 'GIT_PASS')]) {
+                  withCredentials([usernamePassword(credentialsId: 'gitcreds', usernameVariable: 'USERNAME', passwordVariable: 'GIT_PASS')]) {
                   script {
                       GIT_PASS = "${env.GIT_PASS}"
                       }
