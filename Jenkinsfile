@@ -15,8 +15,8 @@ agent any
 
 environment {
         //  Define all variables
-        MVN_RELEASE_VERSION = "0.0.1"
-        MVN_DEV_VERSION = "0.0.2-SNAPSHOT"
+        MVN_RELEASE_VERSION = "0.0.2"
+        MVN_DEV_VERSION = "0.0.3-SNAPSHOT"
         gitbranch="developemet"
        }  
     options {
