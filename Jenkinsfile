@@ -27,14 +27,14 @@ environment {
                } 
            }
 
-/*       stage("Build") {
+       stage("Build") {
             steps {
               mavenBuild();
                }
             post {
                success {
                     // we only worry about archiving the jar file if the build steps are successful
-                    archiveArtifacts(artifacts: '**target*.jar', allowEmptyArchive: true)
+                    archiveArtifacts(artifacts: '**/target/*.jar', allowEmptyArchive: true)
                 }
              }
           }
@@ -63,5 +63,5 @@ environment {
         always {
             sendNotifications("currentBuild.result")
         }
-*/    }
+    }
 }
