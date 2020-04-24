@@ -1,4 +1,4 @@
-@Library('pstsharedlibrary')_
+@Library('pst-all')_
 pipeline {
 
 agent any
