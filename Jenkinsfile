@@ -19,6 +19,10 @@ environment {
         MVN_DEV_VERSION = "0.0.2-SNAPSHOT"
         gitbranch="env.BRANCH_NAME"
        }  
+    options {
+        // Only keep the 10 most recent builds
+        buildDiscarder(logRotator(numToKeepStr:'2'))
+    }
 
     stages {
        stage("PreBuild Steps") {
