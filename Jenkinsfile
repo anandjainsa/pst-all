@@ -14,6 +14,8 @@ agent any
     }
 
 environment {
+         HOSTNAME = "192.168.33.11"
+         PORT = "tomcat"
         //  Define all variables
         MVN_RELEASE_VERSION = "0.0.2"
         MVN_DEV_VERSION = "0.0.3-SNAPSHOT"
@@ -47,7 +49,8 @@ environment {
         stage('Deploy to Tomcat'){
             steps {
                   sshagent(['my-ssh-key']) {
-                  sh 'scp -rv -o StrictHostKeyChecking=no target/*.war vagrant@192.168.33.11:/opt/tomcat/webapps/'
+                  tomcatDeploy("{HOSTNAME}","{PORT}");
+//                  sh 'scp -rv -o StrictHostKeyChecking=no target/*.war vagrant@192.168.33.11:/opt/tomcat/webapps/'
             }
        }
    }
