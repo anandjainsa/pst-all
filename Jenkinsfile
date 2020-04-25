@@ -17,8 +17,6 @@ environment {
          HOSTNAME = "192.168.33.11"
          PORT = "tomcat"
         //  Define all variables
-        MVN_RELEASE_VERSION = "0.0.3"
-        MVN_DEV_VERSION = "0.0.2-SNAPSHOT"
         gitbranch="developemet"
        }  
     options {
