@@ -1,9 +1,6 @@
-def call(MVN_DEV_VERSION, MVN_RELEASE_VERSION, gitbranch, GIT_PASS)
+def call(gitbranch, GIT_PASS)
      {
           sh '''
-#               git clone https://github.com/anandjainsa/scripts.git /tmp/releasescripts
-#               git clone git@github.com:anandjainsa/scripts.git /tmp/releasescripts
-                sleep 5
                 export GIT_PASSWORD="${GIT_PASS}"
                 export GIT_ASKPASS="/tmp/release/gitpass.sh"
 
@@ -19,7 +16,8 @@ def call(MVN_DEV_VERSION, MVN_RELEASE_VERSION, gitbranch, GIT_PASS)
                 fi
                 git clone git@github.com:anandjainsa/scripts.git /tmp/releasescripts
 
-                sh /tmp/releasescripts/gitrelease.sh ${MVN_RELEASE_VERSION} ${MVN_DEV_VERSION} ${gitbranch}
+                MVN_RELEASE_VERSION=`mvn org.apache.maven.plugins:maven-help-plugin:3.1.0:evaluate -Dexpression=project.version -q -DforceStdout`
+                sh /tmp/releasescripts/gitrelease.sh ${MVN_RELEASE_VERSION} ${gitbranch}
         '''
 }
 
