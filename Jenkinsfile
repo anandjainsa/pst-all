@@ -29,7 +29,7 @@ environment {
     stages {
        stage("PreBuild Steps") {
             steps {
-              preBuild("${MVN_RELEASE_VERSION}");
+              preBuild();
                } 
            }
 
@@ -50,7 +50,6 @@ environment {
             steps {
                   sshagent(['my-ssh-key']) {
                   tomcatDeploy("{HOSTNAME}","{PORT}");
-//                  sh 'scp -rv -o StrictHostKeyChecking=no target/*.war vagrant@192.168.33.11:/opt/tomcat/webapps/'
             }
        }
    }
@@ -61,7 +60,7 @@ environment {
                   script {
                       GIT_PASS = "${env.GIT_PASS}"
                       }
-                  mavenReleaseTag("${MVN_DEV_VERSION}", "${MVN_RELEASE_VERSION}", "${gitbranch}", "${GIT_PASS}" )
+                  mavenReleaseTag("${gitbranch}", "${GIT_PASS}" )
                   }
                 }
         }
