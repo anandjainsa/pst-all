@@ -4,12 +4,6 @@ def call(gitbranch, GIT_PASS)
                 export GIT_PASSWORD="${GIT_PASS}"
                 export GIT_ASKPASS="/tmp/release/gitpass.sh"
 
-                if [ -z ${MVN_DEV_VERSION} ] || [ -z ${MVN_RELEASE_VERSION} ]
-
-                then
-                        exit 0;
-                fi
-
                 if [ -d /tmp/releasescripts ]
                  then
                    rm -rf /tmp/releasescripts
